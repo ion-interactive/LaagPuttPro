@@ -1,26 +1,33 @@
-<html lang=”en”>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Name of your awesome camera app -->
-    <title>Camera App</title>
-    <!-- Link to your main style sheet-->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Camera -->
-    <main id="camera">
-        <!-- Camera sensor -->
-        <canvas id="camera--sensor"></canvas>
-        <!-- Camera view -->
-        <video id="camera--view" autoplay playsinline></video>
-        <!-- Camera output -->
-        <img src="//:0" alt="" id="camera--output">
-        <!-- Camera trigger -->
-        <button id="camera--trigger">Take a picture</button>
-    </main>
-    <!-- Reference to your JavaScript file -->
-    <script src="app.js"></script>
-</body>
+<title>Tracking Color Blobs in Webcam Feed Using Tracking.js</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="tracking-min.js"></script>
+    <script src="script.js"></script>
+  </head>
+ 
+  <body>
+ 
+    <div class="display">
+      <video id="webcam" width="640" height="480" autoplay></video>
+      <canvas id="canvas" width="640" height="480"></canvas>
+    </div>
+ 
+    <div class="ui">
+ 
+      <div class="controls">
+ 
+        <p>Click on the webcam feed to pick a color, then adjust tolerance.</p>
+ 
+        <div>
+          <label for="tolerance">Tolerance:</label>
+          <input id="tolerance" type="range" value="10" max="255" min="0" step="1">
+        </div>
+ 
+      </div>
+ 
+      <div id="color"></div>
+ 
+    </div>
+ 
+  </body>
+ 
 </html>
